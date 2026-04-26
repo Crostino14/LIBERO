@@ -32,6 +32,28 @@ ______________________________________________________________________
 
 ---
 
+## Changes from the Original Repository
+
+> ⚠️ **This is a fork of the original [LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO) repository.**
+>
+> It has been adapted and extended as part of the following research project:
+>
+> **[Evaluating Generalization of State-of-the-Art Multi-Task Language-Conditioned Imitation Learning Systems](https://github.com/Crostino14/Evaluating-Generalization-of-Sota-Multi-Task-Language-Conditioned-Imitation-Learning-Systems)**
+>
+> All credits for the original LIBERO framework go to the authors listed above. The modifications introduced in this fork are described in the section below.
+
+This fork extends the original LIBERO codebase with additional **BDDL task definition files** added to `libero/bddl_files/libero_goal/`. No existing files or core components were modified.
+
+The new files define task variants for the **LIBERO-Goal** suite across five categories:
+
+- `_syn_l1` / `_syn_l1_v[1-3]` — **Syntactic Level 1**: verb substitution variants (e.g., *"put"* → *"place"*).
+- `_syn_l2` / `_syn_l2_v[1-3]` — **Syntactic Level 2**: syntactic restructuring variants (imperative → declarative/passive form).
+- `_syn_l3` / `_syn_l3_v[1-3]` / `_syn_l3_NoTrain_v[N]` — **Syntactic Level 3**: compositional spatial reference variants, where the target object is described via relational spatial expressions. `NoTrain` variants are held-out and never seen during fine-tuning.
+- `_task_comp_l1` — **Task-Level 1**: cross-object skill transfer tasks (known primitive applied to a novel object).
+- `_task_comp_l2` — **Task-Level 2**: novel task composition tasks (two known primitives combined into a single unseen instruction).
+- `_ablation_*` — **Ablation study** variants used to verify whether Task-Level results reflect genuine generalization or training-distribution artifacts.
+
+---
 
 # Contents
 
